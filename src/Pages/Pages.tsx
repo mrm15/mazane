@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 import Layout from "../Components/Layout";
 import PersistLogin from "../Components/PersistLogin"
 import RequireAuth from "../Components/RequireAuth"
-import LoginSMS from "../Components/LoginSMS.tsx";
+import LoginHOOSHRO from "../Components/LoginHOOSHRO.tsx";
 import {PAGES} from "./Route-string.tsx"
 import Unauthorized from "../Components/Unauthorized/Unauthorized.tsx";
 import {ROLES} from "./ROLES.tsx";
@@ -63,7 +63,7 @@ const Pages = () => {
                 {/* pages all people can see and no need to side bar */}
                 {/*<Route path="register" element={<RegisterSMS/>}/>*/}
 
-                <Route path={PAGES.LOGIN} element={<LoginSMS/>}/>
+                <Route path={PAGES.LOGIN} element={<LoginHOOSHRO/>}/>
 
 
 

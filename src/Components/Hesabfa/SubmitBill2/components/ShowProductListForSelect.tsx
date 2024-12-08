@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import {addRowIdtoTable, formatNumber} from "../../../../utils/utilsFunction.tsx";
 import {calculateSumOfEachRow} from "../../SubmitBill/functions.tsx";
 import {useSubmitBillContext} from "../submitBillContext.tsx";
-import NamarangLogoSvg from "../../../../assets/Svg/NamarangLogoSvg.tsx";
+import HOOSHROLogo from "../../../../assets/Svg/HOOSHROLogo.tsx";
 
 
 const ShowProductListForSelect = () => {
@@ -114,7 +114,7 @@ const ShowProductListForSelect = () => {
     const CustomOption = (props) => (
         <components.Option {...props}>
             <div className={"flex  gap-2 fontSize10 w-80"}>
-                <div className={" rounded border border-gray-400"}><NamarangLogoSvg width={50} height={50}/></div>
+                <div className={" rounded border border-gray-400"}><HOOSHROLogo width={50} height={50}/></div>
                 <div className={"flex flex-col justify-around"}>
                     <div>
                         {props.data.label.split("__")[0]}

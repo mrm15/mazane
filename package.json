@@ -22,6 +22,7 @@
     "@tanstack/react-table": "^8.19.3",
     "@types/file-saver": "^2.0.7",
     "@types/html-docx-js": "^0.3.4",
+    "@types/js-cookie": "^3.0.6",
     "@types/pdfmake": "^0.2.9",
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/xlsx": "^0.0.36",

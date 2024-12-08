@@ -1,0 +1,93 @@
+.login__container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #333333;
+
+  input:focus , input:active, input:visited, input:empty {
+    background: none;
+  }
+  ///* Remove the default browser's autofill styles */
+  input:-webkit-autofill {
+    background: none;
+    -webkit-box-shadow: 0 0 0 1000px white inset; /* Prevent the default yellow background */
+    -webkit-text-fill-color: black; /* Ensure text color matches the rest of the form */
+  }
+
+  .loginBtn {
+    background: #D8C799;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    width: 180px;
+    height: 55px;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .loginBtnContainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+
+  .loginLogo {
+    height: 280px;
+    width: 240px;
+  }
+
+  .loginBtnIcon {
+    position: absolute;
+    right: 10px;
+  }
+
+  .loginInput {
+    outline: none;
+    border: none;
+    background: inherit;
+    width: 250px;
+    height: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: aliceblue;
+  }
+
+  input[type="text"].blinking {
+    height: 50px;
+  }
+
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+
+  .inputContainer {
+    width: 295px;
+    height: 50px;
+    margin-top: 20px;
+    border-bottom: 1px solid #D8C799;
+    position: relative;
+  }
+
+  .inputIcon {
+    position: absolute;
+    left: 0px;
+    bottom: 5px;
+  }
+
+  ::placeholder {
+    color: #D8C799;
+    opacity: 1;
+  }
+}
