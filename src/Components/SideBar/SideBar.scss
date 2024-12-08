@@ -1,0 +1,44 @@
+.side__bar__styles{
+
+  //height: 100vh;
+
+  overflow-y: scroll; /* Allow vertical scrolling */
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; /* Firefox */
+
+  /* For Internet Explorer and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+
+  .panel-sidebar:hover {
+    width: 230px;
+  }
+
+  .panel-sidebar {
+    background: #334667;
+    min-width: 65px;
+    width: 40px;
+    //height: 96vh;
+    //position: fixed;
+    z-index: 9999;
+    right: 2vh;
+    top: 2vh;
+    overflow: hidden;
+    transition: all 0.5s;
+    border-radius: 8px;
+
+  }
+
+
+
+
+
+}

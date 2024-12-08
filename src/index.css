@@ -1,0 +1,87 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    /*@apply font-poppins bg-gray-400;*/
+    font-family: IranSans, serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-size: 0.75rem;
+}
+
+.btn-submit-mir {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded hover:cursor-pointer
+    disabled:bg-blue-300 disabled:border-blue-300 disabled:cursor-not-allowed;
+}
+
+.btn-green-mir {
+    @apply bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded hover:cursor-pointer
+    disabled:bg-green-300 disabled:border-green-300 disabled:cursor-not-allowed;
+}
+
+.btn-gay-mir {
+    @apply bg-gray-300 hover:bg-gray-400 text-black  py-1 px-2 border border-gray-200 rounded hover:cursor-pointer select-none;
+}
+
+.btn-white-border-mir {
+    @apply h-max bg-white  text-black  py-1 px-2 border border-gray-200 rounded hover:cursor-pointer;
+}
+.btn-red-border-mir {
+    @apply bg-red-600  text-white  py-2 px-4 border border-gray-700 rounded hover:cursor-pointer;
+}
+
+.btn-into-aggrid {
+    @apply bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-1 rounded inline-flex items-center;
+}
+
+.btn-blue-secondary {
+    @apply  px-1 rounded bg-teal-200 text-teal-800;
+}
+.btn-blue-secondary-delete {
+    @apply  px-1 rounded bg-red-200 text-teal-800;
+}
+
+.btn-small-edit {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 text-xs border border-yellow-600 rounded hover:cursor-pointer;
+}
+
+.btn-small-delete {
+    @apply bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 text-xs border border-red-600 rounded hover:cursor-pointer;
+}
+
+.btn-small-show {
+    @apply bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-3 text-xs border border-green-600 rounded hover:cursor-pointer;
+}
+.myResponsiveWidth {
+    /*@apply w-full sm:w-640 md:w-768 lg:w-1024 xl:w-1028 2xl:w-1536 mx-auto overflow-scroll p-4 box-border;*/
+    /* Additional styles to prevent horizontal scrolling */
+    /*max-width: 100%; !* Ensures content doesn't exceed container width *!*/
+
+    @apply sm:min-w-640 md:min-w-768 lg:min-w-1024 xl:min-w-1280 2xl:min-w-1536 p-4 box-border;
+
+
+}
+
+.myResponsiveWidthMenuOpen{
+    @apply sm:min-w-432 md:min-w-560 lg:min-w-819 xl:min-w-1072 2xl:min-w-1328 p-4 box-border;
+}
+
+.badge-bg-blue-text-white {
+    @apply inline-block bg-blue-500 text-white text-xs  mr-2 px-2.5 py-0.5 rounded
+}
+
+.badge-bg-green-text-white {
+    @apply inline-block bg-green-500 text-white text-xs  mr-2 px-2.5 py-0.5 rounded
+}
+
+.badge-bg-red-text-red {
+    @apply inline-block bg-red-400 text-red-700 text-xs  mr-2 px-2.5 py-0.5 rounded
+}
+
+

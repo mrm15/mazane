@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    //    "useDefineForClassFields": true,
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+    //    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": false,
+    "noUnusedLocals": false, //  it was true => false
+    "noUnusedParameters": false, //  it was true => false
+    "noFallthroughCasesInSwitch": false, //  it was true => false
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "vite-plugin-pwa/client",
+      "node",
+
+    ]
+  },
+  "include": ["./src/*"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+
+}
