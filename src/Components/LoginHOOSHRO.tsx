@@ -42,6 +42,7 @@ const LoginHOOSHRO: React.FC = () => {
 
 
     const handleLogin = async () => {
+
         if(loginData.password==="" || loginData.username===""){
             toast.dismiss()
             toast.error("نام کاربری و رمز نباید خالی باشد.")
@@ -86,8 +87,7 @@ const LoginHOOSHRO: React.FC = () => {
         }
     };
     useEffect(() => {
-        void tryToRefresh().then(r => {
-
+        tryToRefresh().then(r => {
             navigateTo(from)
         }).catch((err: Error) => {
             console.log(err?.toString())
@@ -127,7 +127,7 @@ const LoginHOOSHRO: React.FC = () => {
                         </div>
                     </div>
                     <div className="loginBtn" onClick={handleLogin}>
-                        <img src={enterIcon} className="loginBtnIcon"/>
+                        <img src={enterIcon} className="loginBtnIcon" alt={""}/>
                         <div className={"select-none"}>ورود</div>
                     </div>
                 </nav>

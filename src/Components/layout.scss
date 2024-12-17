@@ -1,17 +1,19 @@
 .dashboard-layout {
-  width: 90vw; /* Full viewport width */
+  background: var(--main-background-color);
+  width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height if needed */
   overflow-x: hidden; /* Prevent horizontal scroll */
   overflow-y: auto; /* Allow vertical scroll if content overflows */
   //background-color: #ff002b; /* Example background color */
   .layout__header {
-    background: #304967;
+
+    overflow: hidden;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
     z-index: 2;
-    height: 50px;
+    height: var(--headerHeghit);
     display: flex;
     align-items: center;
     width: auto;
@@ -44,9 +46,9 @@
         display: none; // Hide scrollbar in WebKit browsers
       }
 
-      &{
-        -ms-overflow-style: none;  // Hide scrollbar for IE and Edge
-        scrollbar-width: none;  // Hide scrollbar for Firefox
+      & {
+        -ms-overflow-style: none; // Hide scrollbar for IE and Edge
+        scrollbar-width: none; // Hide scrollbar for Firefox
 
       }
     }
@@ -59,7 +61,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #304967;
     height: 40px;
     line-height: 40px;
     padding: 0 5px;

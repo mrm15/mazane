@@ -1,7 +1,10 @@
 @import "Components/MyFormik/styles.scss";
-:root{
-    --bgcolor: #fafafa;
-    --whitecolor:#ffffff;
+:root {
+
+    --headerHeghit:50px;
+    --footerHeghit:50px;
+    --main-background-color:#333;
+    --secondary-background-color:#d8c799;
 }
 
 * {

@@ -1,5 +1,6 @@
 import axios from '../api/axios';
 import useAuth from './useAuth';
+import Cookies from "js-cookie";
 
 const useRefreshToken = () => {
     const { setAuth } = useAuth();
@@ -10,14 +11,30 @@ const useRefreshToken = () => {
 
         while (attempts < maxAttempts) {
             try {
-                const response = await axios.get('/refresh', {
-                    withCredentials: true
+
+                const token = Cookies.get('jwttoken');
+                if(!token){
+                    // window.location.href = '/login';
+                    Cookies.remove('jwttoken');
+                    throw new Error('Error');
+
+                }
+
+
+                const headers = {
+                    'Authorization': `Bearer ${token}`
+                };
+                const response = await axios.get('/auth/get_user', {
+                    // withCredentials: true,
+                    headers,
+
                 });
+
 
                 setAuth(prev => ({
                     ...prev,
-                    userInfo: response.data.userInfo,
-                    accessToken: response.data.accessToken
+                    userInfo: response.data,
+                    accessToken: token
                 }));
                 return response.data.accessToken;
             } catch (error) {

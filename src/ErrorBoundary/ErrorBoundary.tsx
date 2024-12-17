@@ -49,7 +49,7 @@ class ErrorBoundary extends React.Component<Props, State> {
                             <div>
                                 یه موردی پیش اومد،
                                 <br/><br/>
-                                سیسستم هوشمند نمارنگ
+                                سیسستم هوشمند
                                 <br/><br/>
                                 بیا بریم توی داشبورد سایت و از اول شروع کنیم! صبر کن عزیزم ..
                             </div>

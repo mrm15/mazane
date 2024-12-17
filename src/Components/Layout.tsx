@@ -7,6 +7,7 @@ import useWindowSize from "../hooks/useWindowSize.tsx";
 import React from "react";
 import DummyData from "./DummyData.tsx";
 import {useDispatch, useSelector} from "react-redux";
+import useAuth from "../hooks/useAuth.tsx";
 
 const Layout = () => {
 
@@ -23,31 +24,47 @@ const Layout = () => {
 
 
     const number = 1;
-
+    const {auth} = useAuth();
+    const isMobile = auth.isMobile;
     if (number === 1) {
         return <main className="main-dashboard0 prevent__horizontal__scroll000 wrapperAllSite">
             {/*<HeaderDashboard/>*/}
             <div className={'dashboard-layout'}>
                 {/**/}
-                <div className={"layout__header"}>
+                <div className={"layout__header"}
+                     style={{
+                         borderBottomLeftRadius: isMobile ? "20px" : undefined,
+                         borderBottomRightRadius: isMobile ? "20px" : undefined,
+                         overflow:"hidden",
+                         backgroundColor:`var(--secondary-background-color)`,
+                     }}
+
+                >
                     <HeaderDashboard/>
 
                 </div>
-                <div className="layout__body">
-                    <SideBar/>
-                    {/**/}
-                    <div style={styles} className={"main-content"}>
-                        <div
-                            className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }
-                        >
-                            <Outlet/>
-                            {/*<DummyData/>*/}
+                {/*<div className="layout__body">*/}
+                {/*    <SideBar/>*/}
+                {/*    /!**!/*/}
+                {/*    <div style={styles} className={"main-content"}>*/}
+                {/*        <div*/}
+                {/*            className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }*/}
+                {/*        >*/}
+                {/*            <Outlet/>*/}
+                {/*            /!*<DummyData/>*!/*/}
 
-                        </div>
-                    </div>
-                </div>
-                <div className={"layout__footer"}>
-                    <FooterDashboard/>
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+                <div className={"layout__footer"}
+                     style={{
+                         borderTopLeftRadius: isMobile ? "20px" : undefined,
+                         borderTopRightRadius: isMobile ? "20px" : undefined,
+                         overflow:"hidden",
+                         backgroundColor:isMobile ? `var(--secondary-background-color)` : undefined,
+                     }}
+                >
+                    {isMobile && <FooterDashboard/>}
                 </div>
             </div>
         </main>

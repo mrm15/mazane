@@ -54,7 +54,7 @@ const Pages = () => {
     // @ts-ignore
 
     const {auth} = useAuth()
-    const isDepartmentAdmin = auth?.userInfo?.isDepartmentAdmin;
+    // const isDepartmentAdmin = auth?.userInfo?.isDepartmentAdmin;
 
     return (
         <>
@@ -71,6 +71,11 @@ const Pages = () => {
                 {/* pages all people can see and need sidebar */}
 
                 <Route element={<PersistLogin/>}>
+
+
+
+
+
                     <Route element={<RequireAuth allowedRoles={ROLES.ticketRepliesCreate}/>}>
                         <Route path={PAGES.ticket_chat_list} element={
                             <Suspense fallback={<Loader/>}>
@@ -221,16 +226,7 @@ const Pages = () => {
                         {/*</Route>*/}
 
 
-                        <Route
-                            // element={<RequireAuth allowedRoles={ROLES.readDepartmentTickets}/>}
-                        >
-                            <Route path={PAGES.ticket_read_department_tickets} element={
-                                <Suspense fallback={<Loader/>}>
-                                    {isDepartmentAdmin ? <TicketRead view={'readDepartmentTickets'}/> : <> فقط مدیر
-                                        دپارتمان میتواند این صفحه را مشاهده کند.</>}
-                                </Suspense>
-                            }/>
-                        </Route>
+
                         {/* ticket read outBox === i assined to others */}
                         <Route element={<RequireAuth allowedRoles={ROLES.ticket_read_assign_tickets_outbox}/>}>
                             <Route path={PAGES.ticket_read_assign_tickets_outbox} element={
