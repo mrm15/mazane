@@ -1,10 +1,28 @@
 @import "Components/MyFormik/styles.scss";
+
 :root {
 
-    --headerHeghit:50px;
-    --footerHeghit:50px;
-    --main-background-color:#333;
-    --secondary-background-color:#d8c799;
+    --headerHeghit: 50px;
+    --footerHeghit: 50px;
+    --bodyHeight: calc(100vh - (var(--headerHeghit) + var(--footerHeghit)));
+    --bodyHeightDesktop: calc(100vh - (var(--headerHeghit)));
+    --main-background-color: #333;
+    --secondary-background-color: #d8c799;
+}
+
+.secondary-background-color {
+    background: var(--secondary-background-color);
+}
+
+.main-background-color {
+    background: var(--main-background-color);
+
+}
+.bodyHeight{
+    height: var(--bodyHeight);
+}
+.bodyHeightDesktop{
+    height: var(--bodyHeightDesktop);
 }
 
 * {
@@ -33,7 +51,7 @@ html {
 /*    min-height: 40px;*/
 /*}*/
 
-.Toastify__toast{
+.Toastify__toast {
     font-family: IranSans, serif !important;
     font-weight: 400;
 }
@@ -92,6 +110,7 @@ html {
     url("./assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
     url("./assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf") format("ttf");
 }
+
 .fontSize8 {
     font-size: 8px !important;
 }
@@ -99,59 +118,77 @@ html {
 .fontSize10 {
     font-size: 10px !important;
 }
+
 .fontSize12 {
     font-size: 12px !important;
 }
+
 .fontSize14 {
     font-size: 14px !important;
 }
+
 .fontSize16 {
     font-size: 16px !important;
 }
+
 .fontSize18 {
     font-size: 18px !important;
 }
+
 .fontSize22 {
     font-size: 22px !important;
 }
+
 .fontSize075rem {
     font-size: 0.75rem !important;
 }
+
 .ltr {
     direction: ltr;
 }
+
 .rtl {
     direction: rtl;
 }
-.border__gray{
+
+.border__gray {
     border: 1px solid gray;
     border-radius: 5px;
 }
-.min__width__200{
+
+.min__width__200 {
     min-width: 200px;
 }
-.width__90_Percent{
+
+.width__90_Percent {
     width: 90% !important;
 }
-.width__60_Percent{
+
+.width__60_Percent {
     width: 60% !important;
 }
-.width__50_Percent{
+
+.width__50_Percent {
     width: 50% !important;
 }
-.width__20_Percent{
+
+.width__20_Percent {
     width: 20% !important;
 }
-.z__index1{
+
+.z__index1 {
     z-index: 1;
 }
-.z__index2{
+
+.z__index2 {
     z-index: 2;
 }
-.min_height_45{
+
+.min_height_45 {
     min-height: 45px;
 }
-.center__absolut{
+
+.center__absolut {
     position: absolute;
     /*left: 0;*/
     top: 0;
@@ -159,7 +196,8 @@ html {
     /*margin-inline: auto;*/
     /*width: fit-content;*/
 }
-.shot__font{
+
+.shot__font {
     font-size: 45px;
     font-family: "B Titr", serif !important;
 }

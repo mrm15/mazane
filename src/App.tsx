@@ -74,7 +74,6 @@ const App: React.FC = () => {
         <>
             <div className={"rtl"}>
                 <Toaster
-
                     reverseOrder={true}
                 />
             </div>
