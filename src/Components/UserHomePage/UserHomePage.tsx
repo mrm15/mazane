@@ -52,7 +52,7 @@ const UserHomePage = () => {
                  style={{height: "80%"}}
             >
                 {myData?.length === 0 && <div><Loader3/></div>}
-                {[...myData ,...myData].map((item, index) => (
+                {myData?.map((item, index) => (
                     <div className="bg-white rounded flex flex-col gap-2 h-32" key={item.id || index}>
                         <div className={"text-center font-bold mx-1  px-2 py-2 rounded"}>{item.type}</div>
                         <div className="flex  justify-between bg-green-700 mx-1 px-2 py-2 rounded  text-white">
