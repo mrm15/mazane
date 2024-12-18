@@ -6,6 +6,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import Loader from "./Loader";
 import {PAGES} from "../Pages/Route-string.tsx";
 import FullLoader from "./Loader/FullLoader.tsx";
+import useWebSocket from "../hooks/useWebSocket.tsx";
 
 const PersistLogin = () => {
 
@@ -14,8 +15,14 @@ const PersistLogin = () => {
     const [isLoading, setIsLoading] = useState(true);
     const refresh = useRefreshToken();
     // @ts-ignore
-    const {auth} = useAuth();
+    const {auth , setAuth} = useAuth();
     const [persist] = useLocalStorage('persist', false);
+
+
+    const {socket, myData} = useWebSocket();
+    useEffect(() => {
+        setAuth({socketData:myData})
+    }, [myData, setAuth]);
 
 
     // @ts-ignore

@@ -1,4 +1,5 @@
 import {createContext, useState} from "react";
+import useObjectDataHolder from "../hooks/UseObjectDataHolder.tsx";
 
 interface AuthContextType {
     auth: {
@@ -29,7 +30,6 @@ interface UserInfo {
 interface AuthState {
     userInfo: UserInfo | null;
     accessToken: string | null;
-
     [key: string]: any; // Index signature
 }
 
@@ -42,11 +42,9 @@ interface AuthState {
 
 export const AuthProvider = ({children}) => {
     // const [auth, setAuth] = useState({});
-    const [auth, setAuth] = useState<AuthState>(() => {
-        // Load authentication data from local storage or a default value
-        const storedAuth = localStorage.getItem("3319173716");
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        return storedAuth ? JSON.parse(storedAuth) : {};
+    const [auth, setAuth] = useObjectDataHolder<AuthState>({
+        userInfo:null,
+        accessToken:null
     });
     return (
         <AuthContext.Provider value={{auth, setAuth}}>

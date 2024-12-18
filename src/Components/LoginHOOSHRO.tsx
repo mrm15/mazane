@@ -62,7 +62,7 @@ const LoginHOOSHRO: React.FC = () => {
 
             const axiosConfig = {
                 headers: {'Content-Type': 'application/json'},
-                withCredentials: true,
+                // withCredentials: true,
             };
 
             const response = await axios.post(LOGIN_URL, formData, axiosConfig);
@@ -72,7 +72,7 @@ const LoginHOOSHRO: React.FC = () => {
 
 
                 setAuth({
-                    userType: response.data.type
+                    userInfo: response.data
                 })
                 navigateTo(from, {replace: true});
 

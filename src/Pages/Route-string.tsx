@@ -1,6 +1,18 @@
 export const PAGES = {
-    SMS: '/sms',
     LOGIN: '/login',
+    // user pages
+    userHome:"/userHome",
+    userRequest:"/shop",
+
+    //admin pages
+    adminHome:"/shop",
+    adminOrderList:"/shop",
+    //
+
+
+
+
+    SMS: '/sms',
     DASHBOARD: '/',
 
     USER_ADD_EDIT: '/add-edit-user',

@@ -71,21 +71,14 @@ const Pages = () => {
                 {/* pages all people can see and need sidebar */}
 
                 <Route element={<PersistLogin/>}>
+                    <Route path="/" element={<Layout/>}>
 
-
-
-
-
-                    <Route element={<RequireAuth allowedRoles={ROLES.ticketRepliesCreate}/>}>
-                        <Route path={PAGES.ticket_chat_list} element={
+                        <Route path={`${PAGES.showBill}/:factorNumber`} element={
                             <Suspense fallback={<Loader/>}>
-                                <TicketChatList2/>
+                                <ShowBill/>
                             </Suspense>
                         }/>
-                    </Route>
 
-                    <Route path="/" element={<Layout/>}>
-                        {/* TicketChatList */}
 
                         <Route path={`${PAGES.showBill}/:factorNumber`} element={
                             <Suspense fallback={<Loader/>}>

@@ -39,7 +39,7 @@ const Layout = () => {
                     <HeaderDashboard/>
 
                 </div>
-                <div className={`layout__body main-background-color    ${isMobile ? " bodyHeight  " : " bodyHeightDesktop  "}`}
+                <div className={` layout__body main-background-color  bodyHeight `}
 
                 >
                     <SideBar/>
@@ -64,7 +64,7 @@ const Layout = () => {
                          backgroundColor:isMobile ? `var(--secondary-background-color)` : undefined,
                      }}
                 >
-                    {isMobile && <FooterDashboard/>}
+                    <FooterDashboard/>
                 </div>
             </div>
         </main>

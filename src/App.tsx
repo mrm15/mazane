@@ -8,6 +8,7 @@ import ErrorBoundary from "./ErrorBoundary/ErrorBoundary.tsx";
 import UpdateInfo from "./UpdateInfo.tsx";
 import { Toaster } from 'react-hot-toast';
 import useAuth from "./hooks/useAuth.tsx";
+import useWebSocket from "./hooks/useWebSocket.tsx";
 
 const App: React.FC = () => {
     const offlineToastRef = useRef<any>(null);

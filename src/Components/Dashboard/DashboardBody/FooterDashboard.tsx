@@ -13,14 +13,14 @@ import idBadge from '../../../assets/icons/id-badge.png'
 import documentAddressString from '../../../assets/icons/document.png'
 
 
-
 const FooterDashboard = () => {
 
 
     const {auth} = useAuth()
+    const isMobile = auth?.isMobile;
     const [currentTime, setCurrentTime] = useState({
-        date:new Date(),
-        persianStringDateTime:"",
+        date: new Date(),
+        persianStringDateTime: "",
     });
 
     useEffect(() => {
@@ -40,39 +40,57 @@ const FooterDashboard = () => {
         navigateTo(input)
     }
     try {
-        return (
-            <div className="text-center thisIsFooterToKnow flex justify-center gap-2">
-                <div className="flex justify-between px-2 py-1 w-full">
-                    <img src={wallet} className="footer-icon" alt={""}/>
-                    <img src={edit} className="footer-icon" alt={""}/>
-                    <img src={clip} className="footer-icon" alt={""}/>
-                    <img
-                        onClick={() => {
-                            window.location.reload()
+        if (isMobile) {
+            return (
+                <div className="text-center thisIsFooterToKnow flex justify-center gap-2">
+                    <div className="flex justify-between px-2 py-1 w-full">
+                        <img src={wallet} className="footer-icon" alt={""}/>
+                        <img src={edit} className="footer-icon" alt={""}/>
+                        <img src={clip} className="footer-icon" alt={""}/>
+                        <img
+                            onClick={() => {
+                                window.location.reload()
+                            }}
+                            src={rotateRight}
+                            className="footer-icon" alt={""}/>
+                        <img src={idBadge} className="footer-icon" alt={""}/>
+                        <img onClick={() => {
+                            const type = auth.type
+                            if (type === "client") {
+                                handleNavigateTo("/clientrequest")
+
+                            } else {
+                                handleNavigateTo("/operatorrequest")
+                            }
                         }}
-                        src={rotateRight}
-                        className="footer-icon" alt={""}/>
-                    <img src={idBadge} className="footer-icon" alt={""}/>
-                    <img onClick={() => {
-
-
-                        const type = auth.type
-                        if (type === "client") {
-                            handleNavigateTo("/clientrequest")
-
-                        } else {
-                            handleNavigateTo("/operatorrequest")
-                        }
-
-
-                    }}
-                         src={documentAddressString}
-                         className="footer-icon" alt={""}
-                    />
-                    <img onClick={() => handleNavigateTo("/")} src={home} className="footer-icon" alt={""}/>
+                             src={documentAddressString}
+                             className="footer-icon" alt={""}
+                        />
+                        <img onClick={() => handleNavigateTo("/")} src={home} className="footer-icon" alt={""}/>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div
+                    className="text-center thisIsFooterToKnow flex justify-center gap-2 secondary-background-color text-black">
+                    <div>
+                        &nbsp;
+                    </div>
+                    <div>
+                        تمامی حقوق محفوظ است. ©
+                    </div>
+                    <div className={"ltr min-w-32 max-w-32  w-32 overflow-hidden font-mono"}>
+
+                        <time dateTime={currentTime.date.toISOString()}>
+                            {currentTime.persianStringDateTime}
+                        </time>
+                    </div>
+                </div>
+            );
+        }
+
+
     } catch (error) {
         return (<>{error.toString()}</>)
     }

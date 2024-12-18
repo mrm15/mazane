@@ -1,9 +1,5 @@
 import React, {useContext} from 'react';
-import {AgGridReact} from "ag-grid-react";
-import ListContact from "../Components/Contact/ListContact.tsx";
-import ListUsers from "../Components/User/ListUsers.tsx";
 import {ReportBillContext} from "./ReportBillContext.tsx";
-import {tempData} from "./tempData.tsx";
 import ReactTableDataShow from "../Components/ReactTableDataShow/ReactTableDataShow.tsx";
 import Pagination from "./Pagination.tsx";
 import TableFilterSection from "./TableFilterSection.tsx";

@@ -24,18 +24,20 @@ const useRefreshToken = () => {
                 const headers = {
                     'Authorization': `Bearer ${token}`
                 };
-                const response = await axios.get('/auth/get_user', {
+                const url  = '/auth/get_user'
+                const response = await axios.get(url, {
                     // withCredentials: true,
                     headers,
-
                 });
 
 
-                setAuth(prev => ({
-                    ...prev,
+                console.log("==============================")
+                console.log(response)
+                console.log("==============================")
+                setAuth({
                     userInfo: response.data,
                     accessToken: token
-                }));
+                });
                 return response.data.accessToken;
             } catch (error) {
                 attempts++;
