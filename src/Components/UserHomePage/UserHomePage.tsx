@@ -48,7 +48,7 @@ const UserHomePage = () => {
 
                 </div>
             </div>
-            <div className={"secondary-background-color rounded grid grid-cols-2 gap-2 w-full p-2 shadow overflow-scroll"}
+            <div className={"secondary-background-color rounded grid grid-cols-2 md:grid-cols-5 gap-2 w-full p-2 shadow overflow-scroll"}
                  style={{height: "80%"}}
             >
                 {myData?.length === 0 && <div><Loader3/></div>}
