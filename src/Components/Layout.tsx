@@ -39,12 +39,12 @@ const Layout = () => {
                     <HeaderDashboard/>
 
                 </div>
-                <div className={` layout__body main-background-color  bodyHeight p-2`}
+                <div className={` layout__body main-background-color  bodyHeight`}
 
                 >
                     <SideBar/>
                     {/**/}
-                    <div  className={"main-content"}
+                    <div  className={"main-content p-2"}
 
                     >
                         {/*<div*/}

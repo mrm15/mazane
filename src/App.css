@@ -41,18 +41,18 @@ html {
     box-sizing: border-box;
 }
 
-/*::-webkit-scrollbar {*/
-/*    width: 0 !important;*/
-/*}*/
+::-webkit-scrollbar {
+    width: 0 !important;
+}
 
-/*::-webkit-scrollbar-thumb {*/
-/*    border: none;*/
-/*    -webkit-box-shadow: none;*/
-/*    box-shadow: none;*/
-/*    background:  rgba(0, 0, 0, 0.58);*/
-/*    border-radius: 10px;*/
-/*    min-height: 40px;*/
-/*}*/
+::-webkit-scrollbar-thumb {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background:  rgba(0, 0, 0, 0.58);
+    border-radius: 10px;
+    min-height: 40px;
+}
 
 .Toastify__toast {
     font-family: IranSans, serif !important;
