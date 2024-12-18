@@ -47,13 +47,13 @@ const Layout = () => {
                     <div  className={"main-content p-2"}
 
                     >
-                        {/*<div*/}
-                        {/*    className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }*/}
-                        {/*>*/}
+                        <div
+                            className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }
+                        >
                             <Outlet/>
                             {/*<DummyData/>*/}
 
-                        {/*</div>*/}
+                        </div>
                     </div>
                 </div>
                 <div className={"layout__footer"}
