@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {sidebarActions} from "../../../store/sidebarReducer/sidebarReducer.tsx";
 import ProfileInHeader from "./ProfileInHeader.tsx";
 import UserStatus from "./UserStatus.tsx";
+import {useEffect} from "react";
 
 
 const HeaderDashboard = () => {
@@ -34,6 +35,13 @@ const HeaderDashboard = () => {
         dispatch(sidebarActions.fillInput({isOpen:!isOpenSidebar}));
     };
 
+    useEffect(() => {
+        if(!isMobile){
+            // @ts-ignore
+            dispatch(sidebarActions.fillInput({isOpen:true}));
+        }
+    }, [dispatch, isMobile]);
+
 
 
     try {
@@ -42,7 +50,7 @@ const HeaderDashboard = () => {
         return (
             <div className="w-full flex  text-black"
             >
-                {isMobile && <div className={'p-3 text-white'}
+                {<div className={'p-3 text-white'}
                       onClick={toggleSidebar}
                 >
                     {isOpenSidebar ? <FaTimes className={"text-black"} size={24}/> : <FaBars className={"text-black"} size={24}/>}
