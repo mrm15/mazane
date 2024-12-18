@@ -73,20 +73,20 @@ const Pages = () => {
                 <Route element={<PersistLogin/>}>
                     <Route path="/" element={<Layout/>}>
 
-                        <Route path={`${PAGES.showBill}/:factorNumber`} element={
-                            <Suspense fallback={<Loader/>}>
-                                <ShowBill/>
-                            </Suspense>
-                        }/>
+                        {/*<Route path={`${PAGES.showBill}/:factorNumber`} element={*/}
+                        {/*    <Suspense fallback={<Loader/>}>*/}
+                        {/*        <ShowBill/>*/}
+                        {/*    </Suspense>*/}
+                        {/*}/>*/}
 
 
-                        <Route path={`${PAGES.showBill}/:factorNumber`} element={
-                            <Suspense fallback={<Loader/>}>
-                                <ShowBill/>
-                            </Suspense>
-                        }/>
+                        {/*<Route path={`${PAGES.showBill}/:factorNumber`} element={*/}
+                        {/*    <Suspense fallback={<Loader/>}>*/}
+                        {/*        <ShowBill/>*/}
+                        {/*    </Suspense>*/}
+                        {/*}/>*/}
                         {/* public routes */}
-                        <Route path={"/mali09384642159"} element={<AccountingReports/>}/>
+                        {/*<Route path={"/mali09384642159"} element={<AccountingReports/>}/>*/}
                         <Route path={'/'} element={
                             <Suspense fallback={<Loader/>}>
                                 <Home/>

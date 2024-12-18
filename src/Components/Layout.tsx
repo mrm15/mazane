@@ -30,8 +30,8 @@ const Layout = () => {
                 {/**/}
                 <div className={"layout__header secondary-background-color"}
                      style={{
-                         borderBottomLeftRadius: isMobile ? "20px" : undefined,
-                         borderBottomRightRadius: isMobile ? "20px" : undefined,
+                         // borderBottomLeftRadius: isMobile ? "20px" : undefined,
+                         // borderBottomRightRadius: isMobile ? "20px" : undefined,
                          overflow:"hidden",
                      }}
 
@@ -39,7 +39,7 @@ const Layout = () => {
                     <HeaderDashboard/>
 
                 </div>
-                <div className={` layout__body main-background-color  bodyHeight `}
+                <div className={` layout__body main-background-color  bodyHeight p-2`}
 
                 >
                     <SideBar/>
@@ -58,10 +58,9 @@ const Layout = () => {
                 </div>
                 <div className={"layout__footer"}
                      style={{
-                         borderTopLeftRadius: isMobile ? "20px" : undefined,
-                         borderTopRightRadius: isMobile ? "20px" : undefined,
+                         // borderTopLeftRadius: isMobile ? "20px" : undefined,
+                         // borderTopRightRadius: isMobile ? "20px" : undefined,
                          overflow:"hidden",
-                         backgroundColor:isMobile ? `var(--secondary-background-color)` : undefined,
                      }}
                 >
                     <FooterDashboard/>

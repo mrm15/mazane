@@ -19,14 +19,16 @@ const App: React.FC = () => {
 
     const { auth, setAuth } = useAuth();
     useEffect(() => {
+
         // Function to handle window resizing
         const handleResize = () => {
+            console.log("handle Resize...")
             const mobileStatus = isMobile();
             if (mobileStatus) {
-                setAuth((prev: any) => ({ ...prev, isMobile: true }));
-                console.log('User is on a mobile device.');
+                setAuth({isMobile: true })
+                console.log('User is on a mobile device.')
             } else {
-                setAuth((prev: any) => ({ ...prev, isMobile: false }));
+                setAuth({isMobile: false })
                 console.log('User is not on a mobile device.');
             }
         };

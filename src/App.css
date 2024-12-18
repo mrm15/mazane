@@ -21,6 +21,9 @@
 .bodyHeight{
     height: var(--bodyHeight);
 }
+.bodyHeightHome {
+    height: calc((var(--bodyHeight) - 1rem ))
+}
 .bodyHeightDesktop{
     height: var(--bodyHeightDesktop);
 }
