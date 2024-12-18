@@ -44,7 +44,7 @@ const Layout = () => {
                 >
                     <SideBar/>
                     {/**/}
-                    <div  className={"main-content p-2"}
+                    <div  className={"main-content px-2"}
 
                     >
                         <div
