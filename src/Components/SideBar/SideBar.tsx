@@ -53,7 +53,7 @@ const Sidebar = () => {
                 // ${isOpen ? "w-44 px-4 " : isMobile ? "width__0" : "w-16 px-4"}
                 //  duration-500 text-gray-100 `}
 
-                className={`absolute secondary-background-color h-screen 
+                className={`absolute0 secondary-background-color h-screen 
                 ${isOpen ? "w-44 px-4 " :  "width__0"}
                  duration-500  `}
             >
