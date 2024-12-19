@@ -60,7 +60,7 @@ const HeaderDashboard = () => {
                         </h6>
                     </div>
                     <div></div>
-                    {/*<ProfileInHeader/>*/}
+                    <ProfileInHeader/>
                 </div>
                 <hr/>
             </div>
