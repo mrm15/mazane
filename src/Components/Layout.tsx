@@ -32,7 +32,6 @@ const Layout = () => {
                      style={{
                          // borderBottomLeftRadius: isMobile ? "20px" : undefined,
                          // borderBottomRightRadius: isMobile ? "20px" : undefined,
-                         overflow:"hidden",
                      }}
 
                 >

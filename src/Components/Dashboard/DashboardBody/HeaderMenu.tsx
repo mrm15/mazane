@@ -38,7 +38,7 @@ function HeaderMenu({setOpenMenu}) {
     }
 
     return (
-        <ul className={'absolute left-0 w-44 flex flex-col p-5 bg-white border border-black text-gray-950 rounded z-10'}>
+        <ul className={'absolute left-0 w-44 flex flex-col p-5 bg-white border border-black text-gray-950 rounded z-50'}>
 
             <li>
                 <div> 👨🏿 {name} </div>
