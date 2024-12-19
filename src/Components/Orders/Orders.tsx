@@ -5,7 +5,7 @@ import OrdersClient from "../OrdersClient/OrdersClient";
 import OrdersAdmin from "../OrdersAdmin/OrdersAdmin.tsx";
 
 const Orders = () => {
-    const { auth } = useAuth();
+    const {auth} = useAuth();
     console.log(auth)
     const userType = auth.userInfo?.type;
     console.log(userType)
@@ -14,8 +14,12 @@ const Orders = () => {
     try {
         return (
             <>
-                {userType === 'client' && <OrdersClient />}
-                {userType === 'operator' && <OrdersAdmin />}
+                {userType === 'client' && <OrdersClient/>}
+                {userType === 'operator' && <OrdersAdmin/>}
+                {!userType && <div>
+                  هوشرو پیشرو در زمینه هوش مصنوعی
+                </div>}
+
             </>
         );
     } catch (error: any) {

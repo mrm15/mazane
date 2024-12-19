@@ -10,8 +10,8 @@ const DataShow = ({data, showType}) => {
   </div> : <></>
 
   return (<div
-    className={"w-full rounded p-1 overflow-y-scroll "}
-    style={{height: '45vh'}}
+    className={"w-full rounded overflow-y-scroll "}
+    style={{height: '40vh'}}
   >
     {ShowIfNoData}
     {showType === "cardShow" ? <CardView data={data}/> : <TableView data={data}/>}</div>);

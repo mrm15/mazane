@@ -91,8 +91,7 @@ const myAxios = useAxiosPrivate()
 
   return (<div>
 
-    <div className={" secondary-background-color rounded p-1 "}>
-      {/*<ShowTypeSection showType={showType} setShowType={setShowType}/>*/}
+    <div className={"secondary-background-color rounded p-1 "}>
       <ShowClientsSection selectedClient={selectedClient} setSelectedClient={setSelectedClient}/>
 
       <DateFilters setFilterType={setFilterType} dateFilter={dateFilter} setDateFilter={setDateFilter}/>

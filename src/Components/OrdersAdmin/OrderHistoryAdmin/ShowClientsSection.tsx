@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPrivate from "../../../hooks/useAxiosPrivate.tsx";
+import {IoIosArrowDown, IoIosArrowForward} from "react-icons/io";
 
 const ShowClientsSection = ({ setSelectedClient, selectedClient }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -38,10 +39,10 @@ const ShowClientsSection = ({ setSelectedClient, selectedClient }) => {
         </div>
         <button onClick={() => setIsOpen(!isOpen)} className="">
           {isOpen ? (
-              <>isOpen</>
+              <><IoIosArrowForward className={"text-white"} /></>
             // <ChevronUpIcon className="w-5 h-5 inline text-white" />
           ) : (
-              <>isNotOpen</>
+              <><IoIosArrowDown className={"text-white"} /></>
             // <ChevronDownIcon className="w-5 h-5 inline text-white" />
           )}
         </button>

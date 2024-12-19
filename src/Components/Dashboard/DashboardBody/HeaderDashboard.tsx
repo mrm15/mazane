@@ -5,8 +5,6 @@ import {FaBars, FaTimes} from 'react-icons/fa';
 import useAuth from "../../../hooks/useAuth.tsx";
 import {useDispatch, useSelector} from "react-redux";
 import {sidebarActions} from "../../../store/sidebarReducer/sidebarReducer.tsx";
-import ProfileInHeader from "./ProfileInHeader.tsx";
-import UserStatus from "./UserStatus.tsx";
 import {useEffect} from "react";
 
 
@@ -55,8 +53,8 @@ const HeaderDashboard = () => {
                     <div className={'flex justify-between align-middle'}>
                     </div>
                     <div className={'flex gap-2'}>
-                        <h6 className={"fontSize075rem"}>
-                            کف بازار
+                        <h6 className={"fontSize075rem font-bold"}>
+                           مظنه
                         </h6>
                     </div>
                     <div></div>
