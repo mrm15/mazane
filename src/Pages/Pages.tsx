@@ -11,6 +11,7 @@ import Loader from "../Components/Loader";
 import Skeleton from "../Components/Skeleton/Skeleton.tsx";
 import useAuth from "../hooks/useAuth.tsx";
 import AdvancedTicketCreate from "../Components/Ticket/advanedTicketCreate/AdvancedTicketCreate.tsx";
+import Loader3 from "../Components/Loader/Loader3.tsx";
 
 const Orders = lazy(() => import("../Components/Orders/Orders.tsx"))
 const MyTicketList = lazy(() => import('../Components/MyTicketList/MyTicketList.tsx'))
@@ -89,15 +90,19 @@ const Pages = () => {
                         {/* public routes */}
                         {/*<Route path={"/mali09384642159"} element={<AccountingReports/>}/>*/}
                         <Route path={PAGES.homePage} element={
-                            <Suspense fallback={<Loader/>}>
+                            <Suspense fallback={<Loader3/>}>
                                 <Home/>
                             </Suspense>
                         }/>
                         <Route path={PAGES.orders} element={
-                            <Suspense fallback={<Loader/>}>
+                            <Suspense fallback={<Loader3/>}>
                                 <Orders/>
                             </Suspense>
                         }/>
+
+
+
+
                         <Route path={'/getMoreActiveContacts'} element={
                             <Suspense fallback={<Loader/>}>
                                 <Index/>
