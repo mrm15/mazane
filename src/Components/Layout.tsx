@@ -33,7 +33,6 @@ const Layout = () => {
                          // borderBottomLeftRadius: isMobile ? "20px" : undefined,
                          // borderBottomRightRadius: isMobile ? "20px" : undefined,
                      }}
-
                 >
                     <HeaderDashboard/>
 
