@@ -38,7 +38,7 @@ const useRefreshToken = () => {
                     userInfo: response.data,
                     accessToken: token
                 });
-                return response.data.accessToken;
+                return response.data.token;
             } catch (error) {
                 attempts++;
                 if (attempts === maxAttempts) {
