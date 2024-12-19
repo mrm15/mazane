@@ -1,9 +1,8 @@
 import React from 'react';
 import useAuth from "../../hooks/useAuth";
-import UserHomePage from "../UserHomePage/UserHomePage";
-import OperatorHomePage from "../OperatorHomePage/OperatorHomePage";
-import OrdersAdmin from "../OrdersAdmin/OrdersAdmin";
+
 import OrdersClient from "../OrdersClient/OrdersClient";
+import OrdersAdmin from "../OrdersAdmin/OrdersAdmin.tsx";
 
 const Orders = () => {
     const { auth } = useAuth();
@@ -16,7 +15,7 @@ const Orders = () => {
         return (
             <>
                 {userType === 'client' && <OrdersClient />}
-                {/*{userType === 'operator' && <OrdersAdmin />}*/}
+                {userType === 'operator' && <OrdersAdmin />}
             </>
         );
     } catch (error: any) {

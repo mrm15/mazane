@@ -1,8 +1,4 @@
 import React, {useState} from 'react';
-import whiteSend from '../../assets/icons/whiteSend.png';
-import blackSend from '../../assets/icons/blackSent.png';
-import burgerWhite from '../../assets/icons/menu-burger-white.png';
-import burgerBlack from '../../assets/icons/menu-burger.png';
 import RequestTabClient from "./RequestTab/RequestTabClient.tsx";
 import RequestListTabClient from "./RequestListTab/RequestListTabClient.tsx";
 import { MdMenu } from "react-icons/md";
