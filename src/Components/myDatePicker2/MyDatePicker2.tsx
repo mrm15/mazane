@@ -21,6 +21,7 @@ interface ConvertedDates {
     gregorian_fa: string,
     gregorian_en: string,
     persian_enDigits: string,
+    persianDateEnDigits: string,
     // [key: string]: any; // For additional dynamic keys if needed
 }
 
@@ -59,6 +60,7 @@ export default function  (props: MyDatePicker2Props) {
         gregorian_fa: null,
         persian: null,
         persian_enDigits: null,
+        persianDateEnDigits:null,
     }
     const setValue = (dateObjectInput: DateObject | null): void => {
 
@@ -85,9 +87,12 @@ export default function  (props: MyDatePicker2Props) {
         const temp123 = new DateObject(jsDateZeroTime)
         const hesabfaFormatDate = dateObjectToIso8601(temp123); // Use zero time for this format
 
+
         const persian1 = new DateObject(dateObjectInput).format();
         const persian_enDigits = p2e(persian1);
 
+        const ttt = new Date(dateObjectInput.toDate()).toLocaleDateString('fa-ir')
+        const persianDateEnDigits = p2e(ttt);
 
         const temp: ConvertedDates = {
             jsDate,
@@ -97,6 +102,7 @@ export default function  (props: MyDatePicker2Props) {
             gregorian_fa: gregorian_fa1,
             persian: persian1,
             persian_enDigits,
+            persianDateEnDigits,
         };
 
         onChange(temp); // Pass the converted date object to the parent onChange

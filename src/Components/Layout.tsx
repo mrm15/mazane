@@ -44,16 +44,11 @@ const Layout = () => {
                 >
                     <SideBar/>
                     {/**/}
-                    <div  className={"main-content px-2"}
-
-                    >
-                        <div
-                            className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }
-                        >
+                    <div  className={"main-content px-2 py-2 w-full"} >
+                        {/*<div className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }>*/}
                             <Outlet/>
                             {/*<DummyData/>*/}
-
-                        </div>
+                        {/*</div>*/}
                     </div>
                 </div>
                 <div className={"layout__footer"}

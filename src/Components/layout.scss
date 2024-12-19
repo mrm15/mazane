@@ -83,6 +83,24 @@
   overflow: hidden;
 }
 
+.last__orders__cards{
+
+  ul{
+    display: flex;
+    justify-content:space-between;
+    padding: 2px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+    li{
+      width: 30%;
+      text-align: right;
+      &:last-child{
+        text-align: left;
+      }
+    }
+  }
+}
+
+
 
 
 

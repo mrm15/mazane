@@ -24,9 +24,13 @@
 .bodyHeightHome {
     height: calc((var(--bodyHeight) - 2rem ))
 }
+.bg-333{
+    background: #333;
+}
 .bodyHeightDesktop{
     height: var(--bodyHeightDesktop);
 }
+
 
 * {
     box-sizing: border-box;

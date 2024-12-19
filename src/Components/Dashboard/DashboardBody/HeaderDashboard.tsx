@@ -42,11 +42,7 @@ const HeaderDashboard = () => {
         }
     }, [dispatch, isMobile]);
 
-
-
     try {
-
-
         return (
             <div className="w-full flex  text-black"
             >

@@ -1,12 +1,11 @@
 export const PAGES = {
     LOGIN: '/login',
     // user pages
-    userHome:"/userHome",
+    homePage:"/",
     userRequest:"/shop",
 
     //admin pages
-    adminHome:"/shop",
-    adminOrderList:"/shop",
+    orders:"/shop",
     //
 
 

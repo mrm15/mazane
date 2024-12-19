@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from "js-cookie";
 
 
 // export const BASE_URL = 'http://localhost:3001';
@@ -17,15 +18,15 @@ export default axios.create({
     baseURL: BASE_URL
 });
 
+
 export const axiosPrivate = axios.create({
     baseURL: BASE_URL,
     headers: {
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
         // 'Authorization': `Bearer 111111111111111111`,
-
+        'Authorization': `Bearer ${Cookies.get('jwttoken')}`
     },
-    withCredentials: true,
-
+    // withCredentials: true,
 });
 export const axiosPrivateFormData = axios.create({
     baseURL: BASE_URL,

@@ -11,6 +11,7 @@ import clip from '../../../assets/icons/clip.png'
 import rotateRight from '../../../assets/icons/rotate-right.png'
 import idBadge from '../../../assets/icons/id-badge.png'
 import documentAddressString from '../../../assets/icons/document.png'
+import {PAGES} from "../../../Pages/Route-string.tsx";
 
 
 const FooterDashboard = () => {
@@ -55,13 +56,8 @@ const FooterDashboard = () => {
                             className="footer-icon" alt={""}/>
                         <img src={idBadge} className="footer-icon" alt={""}/>
                         <img onClick={() => {
-                            const type = auth.type
-                            if (type === "client") {
-                                handleNavigateTo("/clientrequest")
+                            navigateTo(PAGES.orders)
 
-                            } else {
-                                handleNavigateTo("/operatorrequest")
-                            }
                         }}
                              src={documentAddressString}
                              className="footer-icon" alt={""}
