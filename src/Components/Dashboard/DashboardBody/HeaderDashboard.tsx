@@ -27,7 +27,7 @@ const HeaderDashboard = () => {
     // @ts-ignore
     const isOpenSidebar = useSelector(s => s.sidebarReducer.isOpen);
     // @ts-ignore
-    const isMobile = auth.isMobile;
+    const isMobile = window.innerWidth <= 768
 
     const toggleSidebar = () => {
         //dispatch(sellFactorActions.changeNumberHandler({id, column, event}))
