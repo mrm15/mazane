@@ -5,6 +5,8 @@ import burgerWhite from '../../assets/icons/menu-burger-white.png';
 import burgerBlack from '../../assets/icons/menu-burger.png';
 import RequestTabClient from "./RequestTab/RequestTabClient.tsx";
 import RequestListTabClient from "./RequestListTab/RequestListTabClient.tsx";
+import { MdMenu } from "react-icons/md";
+import {RiSendPlaneFill} from "react-icons/ri";
 
 const OrdersClient = () => {
 
@@ -21,20 +23,23 @@ const OrdersClient = () => {
                         className={"py-3 px-2 flex flex-wrap w-1/2 rounded " + (requestTabSelected ? " bg-white text-black " : "  bg-333 text-white ")}
                         onClick={() => setSelectedTab("request")}>
 
-                        {requestTabSelected ? <img src={blackSend} alt={"blackSend"}/> : <img src={whiteSend} alt={"blackSend"}/>}
+                       <div>
+                           <RiSendPlaneFill size={20} className={!requestTabSelected ? " text-white " : " text-black "} />
+                       </div>
+                        {/*{requestTabSelected ? <img src={blackSend} alt={"blackSend"}/> : <img src={whiteSend} alt={"blackSend"}/>}*/}
                         &nbsp;&nbsp;
                         <div>
                             درخواست
                         </div>
                     </button>
                     <button
-                        className={"py-3 px-2 flex flex-wrap w-1/2 rounded " + (!requestTabSelected ? " bg-white text-black " : " bg-333 text-white ")}
+                        className={"py-3 px-2 flex flex-wrap items-center w-1/2 rounded " + (!requestTabSelected ? " bg-white text-black " : " bg-333 text-white ")}
                         onClick={() => setSelectedTab("requestList")}>
                         <div
 
                         >
-                            {!requestTabSelected ? <img style={{width:15}} src={burgerBlack} alt={"blackSend"}/> :
-                                <img src={burgerWhite} alt={"blackSend"}/>}
+                            <MdMenu size={20} className={requestTabSelected ? " text-white " : " text-black "} />
+                            {/*{!requestTabSelected ? <img style={{width:15}} src={burgerBlack} alt={"blackSend"}/> :<img src={burgerWhite} alt={"blackSend"}/>}*/}
 
                         </div>
                         <div>

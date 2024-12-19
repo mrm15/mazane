@@ -12,6 +12,9 @@ import rotateRight from '../../../assets/icons/rotate-right.png'
 import idBadge from '../../../assets/icons/id-badge.png'
 import documentAddressString from '../../../assets/icons/document.png'
 import {PAGES} from "../../../Pages/Route-string.tsx";
+import {IoMdHome} from "react-icons/io";
+import {FaListAlt} from "react-icons/fa";
+import {PiWalletBold} from "react-icons/pi";
 
 
 const FooterDashboard = () => {
@@ -45,7 +48,9 @@ const FooterDashboard = () => {
             return (
                 <div className="text-center thisIsFooterToKnow flex justify-center gap-2">
                     <div className="flex justify-between px-2 py-1 w-full">
-                        <img src={wallet} className="footer-icon" alt={""}/>
+                        <div>
+                            <PiWalletBold size={35} className={"text-333"} />
+                        </div>
                         <img src={edit} className="footer-icon" alt={""}/>
                         <img src={clip} className="footer-icon" alt={""}/>
                         <img
@@ -54,15 +59,15 @@ const FooterDashboard = () => {
                             }}
                             src={rotateRight}
                             className="footer-icon" alt={""}/>
-                        <img src={idBadge} className="footer-icon" alt={""}/>
-                        <img onClick={() => {
+                        <div onClick={() => {
                             navigateTo(PAGES.orders)
 
-                        }}
-                             src={documentAddressString}
-                             className="footer-icon" alt={""}
-                        />
-                        <img onClick={() => handleNavigateTo("/")} src={home} className="footer-icon" alt={""}/>
+                        }} >
+                            <FaListAlt size={35} className={"text-333"} />
+                        </div>
+                        <div  onClick={() => handleNavigateTo("/")}>
+                            <IoMdHome size={35} className={"text-333"} />
+                        </div>
                     </div>
                 </div>
             );
