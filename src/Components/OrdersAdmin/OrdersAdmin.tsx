@@ -3,6 +3,7 @@ import CurrentTimeShow from "../CurrentTimeShow/CurrentTimeShow.tsx";
 import {RiSendPlaneFill} from "react-icons/ri";
 import {MdMenu} from "react-icons/md";
 import LastOrdersAdmin from "./LastOrders/LastOrdersAdmin.tsx";
+import OrderHistoryAdmin from "./OrderHistoryAdmin/OrderHistoryAdmin.tsx";
 
 
 
@@ -58,7 +59,7 @@ const OrdersAdmin = () => {
 
             <div>
                 {selectedTab === "request" ? <LastOrdersAdmin/> : <>
-                    {/*<OrderHistory/>*/}
+                    <OrderHistoryAdmin/>
                 </>}
             </div>
 
