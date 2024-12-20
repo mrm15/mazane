@@ -28,31 +28,31 @@ type MenuType = {
 }[]
 
 
-export const getMenus=({roleAccessList, isDepartmentAdmin}:any): MenuType => [
+export const getMenus=(): MenuType => [
     {name: "داشبورد", link: '/', icon: MdOutlineDashboard, margin: false, showItem: true,},
     {
         name: "گزارش مدیر",
         link: PAGES.adminReport,
         icon: RiBillLine,
-        showItem: roleAccessList?.includes('adminReport'),
+        showItem: true,
     },
     {
         name: "خروجی انبار",
         link: PAGES.reportBill,
         icon: RiBillLine,
-        showItem: roleAccessList?.includes('showReportBillList'),
+        showItem: true,
     },
     {
         name: "لیست فاکتور",
         link: PAGES.basted_bandi_ersal,
         icon: RiBillLine,
-        showItem: roleAccessList?.includes('basteBandi') || roleAccessList?.includes('ersal') || (roleAccessList?.includes(ROLES.screenShotBills[0])) ,
+        showItem: true ,
     },
     {
         name: "فاکتورهای من",
         link: PAGES.showMyBillListForCustomer,
         icon: RiBillLine,
-        showItem: roleAccessList?.includes(ROLES.showMyBillListForCustomer[0]) ,
+        showItem: true,
     },
 
 
@@ -62,39 +62,39 @@ export const getMenus=({roleAccessList, isDepartmentAdmin}:any): MenuType => [
         name: "ثبت سفارش",
         link: PAGES.ticket_Create,
         icon: MdAssignmentAdd,
-        showItem: roleAccessList?.includes(ROLES.ticketCreate[0]),
+        showItem:true,
     },
     {
         // اگه دسترسی ثبت سفارسش داشت پس باید دسترسی پیگیری سفارش هم داشته باشه
         name: "پیگیری سفارش",
         link: PAGES.ticket_created_by_me,
         icon: MdAssignmentTurnedIn,
-        showItem: roleAccessList?.includes(ROLES.ticketCreate[0]),
+        showItem: true,
     },
     {
         name: "محاسبه قیمت",
         link: PAGES.submit_bill,
         icon: FaBeer,
-        showItem: roleAccessList?.includes(ROLES.testBillCalculatePrice[0]),
+        showItem: true,
     },
 
     {
         name: "قلک من",
         link: PAGES.myBank,
         icon: BsPiggyBank,
-        showItem: roleAccessList?.includes(ROLES.myBankFirstUserId[0]),
+        showItem: true,
     },
     {
         name: "قلک کلی",
         link: PAGES.allBanks,
         icon: MdOutlineSavings,
-        showItem: roleAccessList?.includes(ROLES.allBanksFirstUserId[0]),
+        showItem: true,
     },
     {
         name: "قلک مدیر",
         link: PAGES.myBankDepartment,
         icon: FaPiggyBank,
-        showItem: roleAccessList?.includes(ROLES.myBankDepartment[0]),
+        showItem: true,
     },
     // {
     //     name: "کل تیکت های من",
@@ -108,47 +108,47 @@ export const getMenus=({roleAccessList, isDepartmentAdmin}:any): MenuType => [
         name: "ورودی دپارتمان",
         link: PAGES.ticket_read_department_tickets,
         icon: HiInboxArrowDown ,
-        showItem: isDepartmentAdmin,
+        showItem: true,
     },
     {
         name: "لیست سفارش ها",
         // link: PAGES.ticket_Read_Own,
         link: PAGES.MyTicketList,
         icon: AiOutlineOrderedList ,
-        showItem: roleAccessList?.includes('showMyTicketList'),
+        showItem: true,
     },
     {
         name: "صندوق ورودی",
         // link: PAGES.ticket_Read_Own,
         link: PAGES.ticket_read_assign_tickets_inbox,
         icon: FaEnvelope,
-        showItem: roleAccessList?.includes('assignTicketsInbox'),
+        showItem: true,
     },
     {
         name: "ارجاع شده ها",
         link: PAGES.ticket_read_assign_tickets_outbox,
         icon: FaShareSquare,
-        showItem: roleAccessList?.includes(ROLES.ticket_read_assign_tickets_outbox[0]),
+        showItem: true,
     },
     {
         name: "کل ارجاعات",
         link: PAGES.ticket_read_assign_tickets_all,
         icon: RiShareForward2Fill,
-        showItem: roleAccessList?.includes('assignTicketsShowAll'),
+        showItem: true,
         margin:true,
     },
     {
         name: "کل سفارشات سامانه",
         link: PAGES.ticket_Read_All,
         icon: MdLocalFireDepartment,
-        showItem: roleAccessList?.includes('readAllTicketsInSystem'),
+        showItem: true,
     },
     //
     {
         name: "تنظیمات مدیر",
         link: PAGES.admin_settings,
         icon: AiFillSetting,
-        showItem: roleAccessList?.includes('adminSettings'),
+        showItem:true,
     },
     // {
     //     name: "افزودن کاربر",
@@ -160,73 +160,9 @@ export const getMenus=({roleAccessList, isDepartmentAdmin}:any): MenuType => [
         name: "مشاهده کاربر",
         link: PAGES.USER_LIST,
         icon: BsPersonVideo2,
-        showItem: roleAccessList?.includes('userReadAll'),
+        showItem: true,
     },
-    //
-    // {
-    //     name: "افزودن نقش",
-    //     link: PAGES.ROLE_ADD_EDIT,
-    //     icon: IoShapes,
-    //     showItem: roleAccessList?.includes('rolesCreate'),
-    // },
-    {name: "لیست نقش", link: PAGES.ROLE_LIST, icon: FaShapes, showItem: roleAccessList?.includes('rolesRead'),},
-    //
-    // {
-    //     name: "افزودن دپارتمان",
-    //     link: PAGES.DEPARTMENT_ADD_EDIT,
-    //     icon: BsBuildingAdd,
-    //     showItem: roleAccessList?.includes('departmentCreate'),
-    // }, //BsBuildingAdd
-    {
-        name: "لیست دپارتمان",
-        link: PAGES.DEPARTMENT_LIST,
-        icon: BsBuildingFill,
-        showItem: roleAccessList?.includes('departmentRead'),
-    },//BsBuildingFill
-    //
-    // {
-    //     name: "افزودن استاتوس",
-    //     link: PAGES.STATUS_ADD_EDIT,
-    //     icon: BsFillModemFill,
-    //     showItem: roleAccessList?.includes('statusListCreate'),
-    // },//BsFillModemFill
-    {
-        name: "لیست استاتوس",
-        link: PAGES.STATUS_LIST,
-        icon: BsFillModemFill,
-        showItem: roleAccessList?.includes('statusListRead'),
-    },
-    //
-    // {
-    //     name: "افزودن فایل",
-    //     link: PAGES.FILE_ADD_EDIT,
-    //     icon: FaFileCirclePlus,
-    //     showItem: roleAccessList?.includes('fileCreate'),
-    // },//FaFileCirclePlus
-    {name: "لیست فایل", link: PAGES.FILE_LIST, icon: FaFileAlt, showItem: roleAccessList?.includes('fileRead'),},
 
-    //
-    // {
-    //     name: "آرشیو پیام",
-    //     link: PAGES.sms_archive,
-    //     icon: FaMessage,
-    //     showItem: roleAccessList?.includes('smsArchive'),
-    // },
-    // {
-    //     name: "پیامک های در انتظار",
-    //     link: PAGES.sms_pending,
-    //     icon: FaMessage,
-    //     showItem: roleAccessList?.includes('smsPending'),
-    // },
-    // {name: "ارسال پیام",
-    //     link: PAGES.sms_send,
-    //     icon: FaMessage,
-    //     showItem: roleAccessList?.includes('smsSend'),
-    // },
-    //
-    //
-
-    //
 
 
 ];

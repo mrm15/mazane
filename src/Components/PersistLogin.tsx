@@ -1,4 +1,4 @@
-import {Outlet, useLocation, useNavigate} from "react-router-dom";
+import {Navigate, Outlet, useLocation, useNavigate} from "react-router-dom";
 import {useState, useEffect} from "react";
 import useRefreshToken from '../hooks/useRefreshToken';
 import useAuth from '../hooks/useAuth';
@@ -56,6 +56,14 @@ const PersistLogin = () => {
         return () => isMounted = false;
     }, [])
 
+    const userType = auth?.userInfo?.type;
+    const isMobile = auth?.isMobile;
+
+    if (userType === "client" && isMobile===false) {
+
+        // Redirect to the root path if the types don't match
+        return <Navigate to="/NotFound"  />;
+    }
 
     return (
         <>

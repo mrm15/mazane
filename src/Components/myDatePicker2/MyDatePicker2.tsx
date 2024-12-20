@@ -145,7 +145,7 @@ export default function  (props: MyDatePicker2Props) {
         <div style={{direction: "rtl"}}
              className={"flex customDatePicker2Style"}
         >
-            <div className={"relative"}>
+            <div className={"relative w-full"}>
                 <DatePicker
                     value={value} // Controlled value via state
                     onChange={setValue} // Handle change with setValue

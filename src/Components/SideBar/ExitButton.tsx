@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 const ExitButton = () => {
 
-    const handleLogOut=()=>{
+    const handleLogOut = () => {
         const yes = window.confirm("شما در حال خروج از برنامه هستید. آیا مطمئنید؟")
         if (yes) {
             Cookies.remove('jwttoken');
@@ -17,15 +17,24 @@ const ExitButton = () => {
         <div
             onClick={handleLogOut}
             style={{
-            background:"red",
-            position:"absolute",
-            bottom:0,
-            marginBottom:10,
-        }}
-        className={"flex  w-full p-2 rounded items-center justify-between text-white"}
+                position: "absolute",
+                bottom: 0,
+                marginBottom: 10,
+            }}
+
         >
-            <div><ImExit size={20} /></div>
-            <div className={"font-bold text-sm"}>خروج</div>
+            <div>
+                <div className={"text-black"}>طراحی شده توسط گروه برنامه نویسی
+                    &nbsp;
+                    <b>هوش رو</b>
+                </div>
+            </div>
+            <div
+                className={"flex bg-red-700  w-full p-2 rounded items-center justify-between text-white cursor-pointer"}
+            >
+                <div><ImExit size={20}/></div>
+                <div className={"font-bold text-sm"}>خروج</div>
+            </div>
         </div>
     );
 };

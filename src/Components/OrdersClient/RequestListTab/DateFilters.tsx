@@ -5,10 +5,9 @@ import MyDatePicker2 from "../../myDatePicker2/MyDatePicker2.tsx";
 const DateFilters = ({
                        dateFilter, setDateFilter,setFilterType
                      }) => {
-  return (<div className={"flex  w-full "}>
+  return (<div className={"flex flex-wrap justify-between w-full "}>
 
-    <div className={"flex items-center"}></div>
-    <div className={"h-10"}>
+    <div className={"calc50-05rem"}>
       <MyDatePicker2
         placeholder={"از تاریخ "}
         value={dateFilter.startDate}
@@ -17,7 +16,7 @@ const DateFilters = ({
         }}
       />
     </div>
-    <div>
+    <div className={"calc50-05rem"}>
       <MyDatePicker2
         placeholder={"تا تاریخ "}
 

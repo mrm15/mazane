@@ -1,10 +1,18 @@
 .customDatePicker2Style {
+  width: 100%;
   .rmdp-container {
+    width: 100%;
     .rmdp-input {
-      border: 1px solid #c0c4d6;
-      border-radius: 5px;
+      //border: 1px solid #c0c4d6;
+      //border-radius: 5px;
       //height: 40px;
       //padding: 10px;
+
+      border: 1px solid #c0c4d6;
+      border-radius: 5px;
+      height: 40px;
+      width: 100%;
+      padding: 10px;
     }
 
   }

@@ -5,8 +5,11 @@ import "./SideBar.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {sidebarActions} from "../../store/sidebarReducer/sidebarReducer.tsx";
 import useAuth from "../../hooks/useAuth.tsx";
-import {getMenus} from "./menus.tsx";
 import ExitButton from "./ExitButton.tsx";
+
+import {getMenus} from "./menus.tsx";
+import {getClientMenu} from "./getClientMenu.tsx";
+import {getAdminMenu} from "./getAdminMenu.tsx";
 
 const Sidebar = () => {
 
@@ -39,67 +42,70 @@ const Sidebar = () => {
     // @ts-ignore
     const {auth} = useAuth();
 
-
-    const roleAccessList = auth.userInfo?.roleAccessList;
-    const isDepartmentAdmin = auth.userInfo?.isDepartmentAdmin;
-
-    const menus = getMenus({roleAccessList, isDepartmentAdmin})
+    const userType = auth?.userInfo?.type
+    const menus = userType === "client" ? getClientMenu() : getAdminMenu()
 
 
+    try {
+        return (
+            <section className={`side__bar__styles0 z-30`}>
+                <div
 
-    return (
-        <section className={`side__bar__styles`}>
-            <div
-
-                className={`absolute0 secondary-background-color  
-                ${isOpen ? "w-44 px-4 " :  "width__0"}
+                    className={`absolute secondary-background-color  
+                ${isOpen ? "w-44 px-1 " : "width__0"}
                  duration-500  `}
-            >
-                <div className={"relative bodyHeight"}>
-                    <div className="py-3 flex justify-end">
-                        <HiMenuAlt3
-                            size={26}
-                            className="cursor-pointer"
-                            onClick={toggleSidebar}
-                        />
-                    </div>
-                    <div className="mt-4 flex flex-col gap-4 relative overflow-visible">
-                        {menus?.filter(row => row.showItem === true).map((menu, i) => {
+                >
+                    <div className={"relative bodyHeight "}>
+                        {/*<div className="py-3 flex justify-end">*/}
+                        {/*    <HiMenuAlt3*/}
+                        {/*        size={26}*/}
+                        {/*        className="cursor-pointer"*/}
+                        {/*        onClick={toggleSidebar}*/}
+                        {/*    />*/}
+                        {/*</div>*/}
+                        <div className={"overflow-y-scroll h-auto"}>
+                            <div className="mt-4 flex flex-col gap-4 relative overflow-visible">
+                                {menus?.filter(row => row.showItem === true).map((menu, i) => {
 
-                            const hasMargin = menu?.margin
-                            return <Link
-                                to={menu?.link}
-                                key={i}
-                                className={` ${hasMargin ? "mt-5" : " "} group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-blue-200  rounded-md`}
-                            >
-                                <div>{React.createElement(menu?.icon, {size: "20"})}</div>
-                                <h2
-                                    style={{
-                                        transitionDelay: `${i + 3}00ms`,
-                                    }}
-                                    // className={`whitespace-pre duration-500 ${
-                                    //     !isOpen && "opacity-0 translate-x-28 overflow-hidden"
-                                    // }`}
-                                    className={`whitespace-pre `}
-                                >
-                                    {menu?.name}
-                                </h2>
-                                <h2
-                                    className={`${
-                                        isOpen && "hidden"
-                                    } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-                                >
-                                    {menu?.name}
-                                </h2>
-                            </Link>
+                                    const hasMargin = menu?.margin
+                                    return <Link
+                                        to={menu?.link}
+                                        key={i}
+                                        className={` ${hasMargin ? "mt-5" : " "} group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-blue-200  rounded-md`}
+                                    >
+                                        <div>{React.createElement(menu?.icon, {size: "20"})}</div>
+                                        <h2
+                                            style={{
+                                                transitionDelay: `${i + 3}00ms`,
+                                            }}
+                                            // className={`whitespace-pre duration-500 ${
+                                            //     !isOpen && "opacity-0 translate-x-28 overflow-hidden"
+                                            // }`}
+                                            className={`whitespace-pre `}
+                                        >
+                                            {menu?.name}
+                                        </h2>
+                                        <h2
+                                            className={`${
+                                                isOpen && "hidden"
+                                            } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                                        >
+                                            {menu?.name}
+                                        </h2>
+                                    </Link>
+                                })}
+                            </div>
+                        </div>
 
-                        })}
+
+                        <ExitButton/>
                     </div>
-                    <ExitButton/>
                 </div>
-            </div>
-        </section>
-    );
+            </section>
+        );
+    } catch (error) {
+        return <>{error.toString()}</>
+    }
 };
 
 export default Sidebar;
