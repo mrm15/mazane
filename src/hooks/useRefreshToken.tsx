@@ -24,7 +24,7 @@ const useRefreshToken = () => {
                 const headers = {
                     'Authorization': `Bearer ${token}`
                 };
-                const url  = '/auth/get_user'
+                const url  = '/auth/get_user/'
                 const response = await axios.get(url, {
                     // withCredentials: true,
                     headers,
