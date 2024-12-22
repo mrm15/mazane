@@ -7,7 +7,7 @@ interface BaseFilterType {
     placeHolder?: string;
 }
 
-const IAdvanceFilter {
+interface IAdvanceFilter {
     model: "advanceFilter",
 
 }
