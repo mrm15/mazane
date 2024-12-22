@@ -12,6 +12,7 @@ const DateFilters = ({
         placeholder={"از تاریخ "}
         value={dateFilter.startDate}
         onChange={(date) => {
+            setFilterType("multi")
           setDateFilter(ps => ({...ps, startDate: date.persianDateEnDigits,}))
         }}
       />
@@ -22,6 +23,7 @@ const DateFilters = ({
 
         value={dateFilter.endDate}
         onChange={(date) => {
+            setFilterType("multi")
           setDateFilter(ps => ({...ps, endDate: date.persianDateEnDigits,}))
         }}
       />

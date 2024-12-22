@@ -18,13 +18,13 @@ export default axios.create({
     baseURL: BASE_URL
 });
 
-
+const cookie=Cookies.get('jwttoken')
 export const axiosPrivate = axios.create({
     baseURL: BASE_URL,
     headers: {
         // 'Content-Type': 'application/json',
         // 'Authorization': `Bearer 111111111111111111`,
-        'Authorization': `Bearer ${Cookies.get('jwttoken')}`
+        // 'Authorization': `Bearer ${cookie}`
     },
     // withCredentials: true,
 });
