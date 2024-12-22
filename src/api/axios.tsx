@@ -3,8 +3,8 @@ import Cookies from "js-cookie";
 
 
 // export const BASE_URL = 'http://localhost:3001';
-export const PREFIX_URL = process.env.REACT_APP_PREFIX_URL || 'http://localhost:3001';
-export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001';
+export const PREFIX_URL = process.env.REACT_APP_PREFIX_URL || 'https://hoshro.com/';
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'https://hoshro.com/';
 
 
 try {
@@ -33,6 +33,6 @@ export const axiosPrivateFormData = axios.create({
     headers: {
         'Content-Type': 'multipart/form-data',
     },
-    withCredentials: true,
+    // withCredentials: true,
 
 });
