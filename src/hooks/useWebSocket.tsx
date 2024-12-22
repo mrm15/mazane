@@ -20,7 +20,8 @@ function useWebSocket<T = unknown>(): UseWebSocketReturn<T> {
 
     const token = `Bearer ${tokenValue}`;
 
-    const socketUrl = `${process.env.REACT_APP_SOCKET_URL}get_prices/?token=${token}`;
+    const socket1111 = process.env.REACT_APP_SOCKET_URL || "wss://hoshro.com/ws/"
+    const socketUrl = `${socket1111}get_prices/?token=${token}`;
 
     // Initialize WebSocket
     const newSocket = new WebSocket(socketUrl);
