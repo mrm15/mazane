@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {sidebarActions} from "../../store/sidebarReducer/sidebarReducer.tsx";
 import useAuth from "../../hooks/useAuth.tsx";
 import ExitButton from "./ExitButton.tsx";
-
+import personIcon from "../../assets/icons/personIcon.png"
 import {getMenus} from "./menus.tsx";
 import {getClientMenu} from "./getClientMenu.tsx";
 import {getAdminMenu} from "./getAdminMenu.tsx";
@@ -42,6 +42,8 @@ const Sidebar = () => {
     // @ts-ignore
     const {auth} = useAuth();
 
+    const user_name = auth?.userInfo?.first_name + " " +auth?.userInfo?.last_name
+    const user_mobile = auth?.userInfo?.mobile
     const userType = auth?.userInfo?.type
     const menus = userType === "client" ? getClientMenu() : getAdminMenu()
 
@@ -63,6 +65,22 @@ const Sidebar = () => {
                         {/*        onClick={toggleSidebar}*/}
                         {/*    />*/}
                         {/*</div>*/}
+
+                        <div className="border-t-2 border-b-2 border-black">
+                            <div className="flex justify-start items-center gap-3">
+                                <div
+                                    className="object-fill"
+                                    style={{width: 50}}
+                                >
+                                    <img src={personIcon} alt=""/>
+                                </div>
+                                <div>
+                                    <div>{user_name}</div>
+                                    {/* <div>{user_mobile}</div> */}
+                                </div>
+                            </div>
+                        </div>
+
                         <div className={"overflow-y-scroll h-auto"}>
                             <div className="mt-4 flex flex-col gap-4 relative overflow-visible">
                                 {menus?.filter(row => row.showItem === true).map((menu, i) => {
