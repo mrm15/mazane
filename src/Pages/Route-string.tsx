@@ -7,6 +7,8 @@ export const PAGES = {
     //admin pages
     orders:"/shop",
     //
+    userProfile:"/userProfile",
+
 
 
 

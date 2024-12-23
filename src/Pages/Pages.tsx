@@ -6,6 +6,7 @@ import {PAGES} from "./Route-string.tsx"
 import {lazy, Suspense} from "react"
 import Loader from "../Components/Loader";
 import Loader3 from "../Components/Loader/Loader3.tsx";
+import UserProfile from "../Components/UserProfile/UserProfile.tsx";
 const Orders = lazy(() => import("../Components/Orders/Orders.tsx"))
 const Home = lazy(() => import("../Components/Home/Home.tsx"));
 const Missing = lazy(() => import('../Components/Missing'));
@@ -33,6 +34,12 @@ const Pages = () => {
                         <Route path={PAGES.orders} element={
                             <Suspense fallback={<Loader3/>}>
                                 <Orders/>
+                            </Suspense>
+                        }/>
+
+                        <Route path={PAGES.userProfile} element={
+                            <Suspense fallback={<Loader3/>}>
+                                <UserProfile />
                             </Suspense>
                         }/>
                     </Route>

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {HiMenuAlt3} from "react-icons/hi";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./SideBar.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {sidebarActions} from "../../store/sidebarReducer/sidebarReducer.tsx";
@@ -10,6 +10,7 @@ import personIcon from "../../assets/icons/personIcon.png"
 import {getMenus} from "./menus.tsx";
 import {getClientMenu} from "./getClientMenu.tsx";
 import {getAdminMenu} from "./getAdminMenu.tsx";
+import {PAGES} from "../../Pages/Route-string.tsx";
 
 const Sidebar = () => {
 
@@ -42,11 +43,11 @@ const Sidebar = () => {
     // @ts-ignore
     const {auth} = useAuth();
 
-    const user_name = auth?.userInfo?.first_name + " " +auth?.userInfo?.last_name
+    const user_name = auth?.userInfo?.first_name + " " + auth?.userInfo?.last_name
     const user_mobile = auth?.userInfo?.mobile
     const userType = auth?.userInfo?.type
     const menus = userType === "client" ? getClientMenu() : getAdminMenu()
-
+    const navigateTo = useNavigate()
 
     try {
         return (
@@ -66,7 +67,9 @@ const Sidebar = () => {
                         {/*    />*/}
                         {/*</div>*/}
 
-                        <div className="border-t-2 border-b-2 border-black">
+                        <div
+                            onClick={()=>navigateTo(PAGES.userProfile)}
+                            className="border-t-2 border-b-2 border-black">
                             <div className="flex justify-start items-center gap-3">
                                 <div
                                     className="object-fill"
