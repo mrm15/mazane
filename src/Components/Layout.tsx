@@ -42,7 +42,7 @@ const Layout = () => {
                 >
                     <SideBar/>
                     {/**/}
-                    <div  className={"main-content px-2 py-2 w-full"} >
+                    <div  className={"main-content  w-full"} >
                         {/*<div className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }>*/}
                             <Outlet/>
                             {/*<DummyData/>*/}
