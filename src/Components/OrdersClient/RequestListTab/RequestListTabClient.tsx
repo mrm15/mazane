@@ -91,7 +91,7 @@ const RequestListTabClient = () => {
                 toast.dismiss(tId)
             }
         }
-        debugger
+          
         void send()
 
     }, [singleDate, dateFilter.startDate, dateFilter.endDate, filterType, itemType])

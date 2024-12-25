@@ -18,7 +18,7 @@ export const upload = async ({
                                  key,
                              }: UploadOptions): Promise<UploadResponse> => {
     try {
-        debugger
+          
         const response = await axiosPrivateFormData.post(url, myFormData);
 
 
@@ -38,7 +38,7 @@ export const upload = async ({
 
 
 export async function uploadFileUtil(file: string | Blob, key: string, axiosPrivateFormData: AxiosInstance) {
-    debugger
+      
     const myFormData = new FormData();
     // myFormData.append(key, file);
     myFormData.append("singleFile", file);
@@ -46,7 +46,7 @@ export async function uploadFileUtil(file: string | Blob, key: string, axiosPriv
     myFormData.append("tag", key);
 
     const resultOfHere = await upload({axiosPrivateFormData, url: "/upload", myFormData, key})
-    debugger
+      
     return resultOfHere
     try {
         const response = await axiosPrivateFormData.post("/upload", myFormData,);

@@ -16,7 +16,7 @@ const SinglePivotData = ({
 
 
     const resultArray = calculatePivot({filterTextForPivot, totalData, myKey, sumKey, countKey})
-        debugger
+          
 
     const mySum = {
         sumKey: 0,

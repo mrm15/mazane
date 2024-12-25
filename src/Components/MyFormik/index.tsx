@@ -31,7 +31,7 @@ function MyComponent({formikForm, initialValues, validationSchema, afterSubmit, 
                     const result = await uploadFileUtil(value, key, axiosPrivateFormData);
                     toast.dismiss(tId)
                     if (result.status === 200) {
-                        debugger
+                          
                         // Store the upload result or file ID
                         toast.success(result.data.message)
                         uploadResults[key] = result.data.id;
@@ -81,7 +81,7 @@ function MyComponent({formikForm, initialValues, validationSchema, afterSubmit, 
 
     const onSubmit = async (values, {resetForm}) => {
 
-        debugger
+          
         console.log('Form data', values);
 
         let toastId: Id
