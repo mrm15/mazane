@@ -5,8 +5,7 @@ import FooterDashboard from "./Dashboard/DashboardBody/FooterDashboard.tsx";
 import './layout.scss'
 import useWindowSize from "../hooks/useWindowSize.tsx";
 import React from "react";
-import DummyData from "./DummyData.tsx";
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import useAuth from "../hooks/useAuth.tsx";
 
 const Layout = () => {

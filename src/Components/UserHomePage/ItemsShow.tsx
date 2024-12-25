@@ -28,11 +28,11 @@ const ItemsShow = ({myData}) => {
                             {item.type}
                         </div>
                         <div className="flex justify-between bg-green-700 text-white rounded px-2 py-1">
-                            <div>خرید</div>
+                            <div>فروش</div>
                             <div>{formatNumber(item.sell_price)}</div>
                         </div>
                         <div className="flex justify-between bg-red-600 text-white rounded px-2 py-1">
-                            <div>فروش</div>
+                            <div> خرید</div>
                             <div>{formatNumber(item.buy_price)}</div>
                         </div>
                     </div>

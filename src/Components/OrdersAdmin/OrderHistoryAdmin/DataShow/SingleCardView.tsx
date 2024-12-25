@@ -18,7 +18,7 @@ const SingleCardView = ({row}) => {
                 row?.status === "reject" ? " رد شده " : " نامشخص "//
 
 
-    const transaction_type = row?.transaction_type === "buy" ? " خرید " : row?.transaction_type === "sell" ? "فروش  " : " نامشخص "//
+    const transaction_type = row?.transaction_type === "buy" ? " فروش " : row?.transaction_type === "sell" ? " خرید " : " نامشخص "//
 
 
     return (<div className={`px-2 rounded my-1  border-r-4 ${bg_basedStatus}  last__orders__cards`}
