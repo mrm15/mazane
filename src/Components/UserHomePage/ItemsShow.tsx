@@ -22,20 +22,22 @@ const ItemsShow = ({myData}) => {
                     <div
                         key={item.id || index}
                         style={{width: isMobile ? "calc(50% - 0.5rem)" : "23%"}}
-                        className={"bg-white rounded flex flex-col gap-2 p-2 " }
+                        className={"bg-white rounded flex flex-col gap-2 p-2 "}
                     >
                         <div className="text-center font-bold">
                             {item.type}
                         </div>
                         <div className="flex justify-between bg-green-700 text-white rounded px-2 py-1">
-                            <div>فروش</div>
-                            <div>{formatNumber(item.sell_price)}</div>
-                        </div>
-                        <div className="flex justify-between bg-red-600 text-white rounded px-2 py-1">
-                            <div> خرید</div>
+                            <div>خرید</div>
                             <div>{formatNumber(item.buy_price)}</div>
                         </div>
+                        <div className="flex justify-between bg-red-600  text-white rounded px-2 py-1">
+                            <div> فروش</div>
+                            <div>{formatNumber(item.sell_price)}</div>
+                        </div>
+
                     </div>
+
                 ))}
             </div>
         </div>

@@ -10,17 +10,17 @@ import useAuth from "../hooks/useAuth.tsx";
 
 const Layout = () => {
 
-    // @ts-ignore
-    const isOpenMenu = useSelector(s => s.sidebarReducer.isOpen);
+    // Safely retrieve Redux state with a default fallback
+    const isOpenMenu = useSelector((state: any) => state?.sidebarReducer?.isOpen ?? false);
 
-    console.log(isOpenMenu ? "منو بازه" : "منو بسته ")
-    const {heightWindowSize} = useWindowSize();
-
-
+    console.log(isOpenMenu ? "منو بازه" : "منو بسته ");
 
     const number = 1;
-    const {auth} = useAuth();
-    const isMobile = auth.isMobile;
+    const { auth } = useAuth();
+
+    // Safely check for `auth` and `auth.userInfo`
+    const isDesktop = !(auth?.isMobile);
+    const isOperator = auth?.userInfo?.type === "operator";
 
     if (number === 1) {
         return <main className="main-dashboard0 prevent__horizontal__scroll000 wrapperAllSite">
@@ -41,7 +41,7 @@ const Layout = () => {
                 >
                     <SideBar/>
                     {/**/}
-                    <div  className={"main-content  w-full"} >
+                    <div  className={`px-2 py-2 main-content  w-full ${isDesktop && isOperator &&  " lg:w-768  mx-auto"}`} >
                         {/*<div className={ isOpenMenu ? " myResponsiveWidthMenuOpen" : " myResponsiveWidth" }>*/}
                             <Outlet/>
                             {/*<DummyData/>*/}

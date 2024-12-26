@@ -37,6 +37,7 @@ const SubmitBox = ({
         const formData = new FormData();
         formData.append("product_id", selectedItemType.id);
         formData.append("order_type", order_type);
+        // formData.append("order_type", order_type==="sell" ? "buy" : "sell");
         formData.append("unit", value + "");
 
         let tId = undefined
@@ -58,7 +59,7 @@ const SubmitBox = ({
 
     }
 
-    const bgColor = (order_type === "sell" ? " bg-red-400 " : " bg-green-400 ") + " rounded py-2"
+    const bgColor = (order_type === "sell" ? " bg-green-400 " : "bg-red-400   ") + " rounded py-2"
     return (
         <div className={"secondary-background-color rounded p-1 my-2"}>
             <div className={"w-full   p-4 rounded flex flex-col gap-2"}>

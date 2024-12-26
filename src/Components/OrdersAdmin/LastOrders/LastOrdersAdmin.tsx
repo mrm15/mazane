@@ -110,7 +110,7 @@ const LastOrdersAdmin = () => {
                   </div>
                 </li>
                 <li>{row?.product_name}</li>
-                <li> {row?.transaction_type === "buy" ? "فروش" : "خرید"} </li>
+                <li> {row?.transaction_type === "buy" ? " خرید " : "فروش "} </li>
               </ul>
               <ul>
                 <li>

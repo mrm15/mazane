@@ -49,12 +49,13 @@ const Sidebar = () => {
     const menus = userType === "client" ? getClientMenu() : getAdminMenu()
     const navigateTo = useNavigate()
 
+    const isMobileUser = (auth?.isMobile)
     try {
         return (
             <section className={`side__bar__styles0 z-30`}>
                 <div
 
-                    className={`absolute secondary-background-color  
+                    className={`${isMobileUser ? "absolute" : " " } secondary-background-color  
                 ${isOpen ? "w-44 px-1 " : "width__0"}
                  duration-500  `}
                 >

@@ -13,7 +13,7 @@ const ItemsShowOperator = ({myData}) => {
             className={"secondary-background-color overflow-scroll rounded"}
             style={{height: "95%"}}
         >
-            <div className={"h-auto  flex flex-wrap gap-2 w-full p-2 items-start" + (isMobile ? "" : "  justify-center ")}>
+            <div className={"h-auto  flex flex-wrap gap-2 w-full p-2 items-start " + (isMobile ? "" : "  justify-end ")}>
                 {myData?.length === 0 && (
                     <div>
                         <Loader3/>
